@@ -8,6 +8,7 @@ public class Gcd {
 	
 	public static int gcd(int p, int q)
 	{
+		// 使用递归实现辗转相除法
 		if (q == 0)
 		{
 			return p;
@@ -18,7 +19,7 @@ public class Gcd {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 
+		// 使用Scanner来从键盘获取两个int型输入，求取最大公约数。
 		Scanner reader = new Scanner(System.in);
 		int p = reader.nextInt();
 		int q = reader.nextInt();
