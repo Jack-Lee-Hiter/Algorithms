@@ -17,6 +17,26 @@ public class Gcd {
 		return gcd(q, r);
 	}
 	
+	public static int gcdloop(int p, int q)
+	{
+		// 使用循环实现辗转相除法
+		if (q == 0)
+		{
+			return p;
+		}
+		else
+		{
+			int r = q;
+			while(r > 0)
+			{
+				r = p % q;
+				p = q;
+				q = r;
+			}
+			return p;
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// 使用Scanner来从键盘获取两个int型输入，求取最大公约数。
@@ -24,7 +44,9 @@ public class Gcd {
 		int p = reader.nextInt();
 		int q = reader.nextInt();
 		int res = gcd(p, q);
-		System.out.print("这两个数的最大公约数是：" + res);
+		int res2 = gcdloop(p, q);
+		System.out.println("这两个数的最大公约数是：" + res);
+		System.out.println("这两个数的最大公约数是：" + res2);
 
 	}
 
